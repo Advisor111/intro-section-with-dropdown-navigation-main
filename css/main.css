@@ -1,0 +1,379 @@
+/* start variablse */
+:root{
+    --Almost-White: hsl(0, 0%, 98%);
+    --Medium-Gray: hsl(0, 0%, 41%);
+    --Almost-Black: hsl(0, 0%, 8%);
+}
+/* end variablse */
+/* start global rulse */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: 'Epilogue', sans-serif;
+    position: relative;
+}
+.container {
+    padding: auto ;
+    margin: 0 auto;
+}
+/* start media */
+/* small */
+@media (min-width: 768px) {
+    .container {
+        width: 748px;
+    }
+}
+/* medium */
+@media (min-width: 992px) {
+    .container {
+        width: 972px;
+    }
+}
+/* large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1180px;
+    }
+}
+/* end media */
+/* end global rulse */
+/* start section */
+.section.shadow::after {
+    content: "";
+    position: fixed;
+    background-color: #000000cc;
+    width: 100%;
+    height: calc(100% + 30px);
+    z-index: 1;
+    top: calc(0px - 30px);
+}
+.section .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 20px;
+    height: 30px;
+}
+.section .header .logo {
+    width: 80px;
+}
+.header .slide .option-l {
+    width: 45px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    padding: 5px;
+}
+.header .option-l i {
+    width: 100%;
+    background-color: var(--Almost-Black);
+    height: 2.4px;
+    transition: 0.3s;
+    border-radius: 5rem;
+    margin: 3px 0;
+}
+.header .option-mobile {
+    background-color: white;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 240px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 2;
+    display: none;
+}
+.option-mobile .x {
+    width: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    position: absolute;
+    right: 23px;
+    top: 39px;
+}
+.option-mobile .x i {
+    width: 100%;
+    background-color: var(--Almost-Black);
+    height: 2.4px;
+    border-radius: 5rem;
+}
+.option-mobile .x i:first-child {
+    transform: rotate(45deg);
+}
+.option-mobile .x i:last-child {
+    transform: rotate(-45deg);
+    margin-top: -3px;
+}
+.option-mobile .opt {
+    margin-top: 60px;
+}
+.option-mobile .opt div:not(.feat-l div, .comp-l div) {
+    margin-bottom: 30px;
+}
+.opt .features,
+.opt .company {
+    background-image: url(../images/icon-arrow-up.svg);
+    background-repeat: no-repeat;
+    background-position: 90px 6px;
+}
+.opt .feat-l {
+    margin-top: 30px;
+}
+.opt .feat-l div {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.feat-l div img {
+    width: 16px;
+    margin-right: 12px;
+}
+.opt .comp-l {
+    margin-top: 30px;
+}
+.opt .comp-l div {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.header .option a {
+    color: var(--Medium-Gray);
+    text-decoration: none;
+    transition: 0.3s;
+}
+.header .option a:hover {
+    color: var(--Almost-Black);
+    cursor: pointer;
+}
+.option-mobile .login a {
+    width: 100%;
+    text-align: center;
+}
+.option-mobile .login button {
+    border: 2px solid var(--Medium-Gray);
+    border-radius: 15px;
+    color: var(--Medium-Gray);
+    background-color: transparent;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+.option .login button:hover {
+    color: var(--Almost-Black);
+    border-color: var(--Almost-Black);
+    cursor: pointer;
+}
+.option-mobile .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header .option-desktop {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.header .option-desktop .x {
+    display: none;
+}
+.header .option-desktop .opt {
+    display: flex;
+    align-items: center;
+}
+.option-desktop .opt div:not(.feat-l, .feat-l div, .comp-l, .comp-l div) {
+    margin-right: 40px;
+}
+.option-desktop .opt .features,
+.option-desktop .opt .company {
+    background-image: url(../images/icon-arrow-up.svg);
+    background-repeat: no-repeat;
+    background-position: 80px 6px;
+    margin-right: 0;
+    padding-right: 20px;
+}
+.option-desktop .features {
+    position: relative;
+}
+.option-desktop .feat-l {
+    position: absolute;
+    background: white;
+    box-shadow: 0 0 20px -11px var(--Almost-Black);
+    border-radius: 10px;
+    padding: 25px;
+    z-index: 2;
+    right: 0;
+    width: max-content;
+}
+.option-desktop .feat-l div {
+    padding-left: 0px;
+    margin-bottom: 14px;
+}
+.option-desktop .feat-l div:last-child {
+    margin: 0;
+}
+.option-desktop .company {
+    position: relative;
+}
+.option-desktop .comp-l {
+    position: absolute;
+    background: white;
+    box-shadow: 0 0 20px -11px var(--Almost-Black);
+    border-radius: 10px;
+    padding: 25px;
+    z-index: 2;
+    left: 0px;
+    width: max-content;
+}
+.option-desktop .comp-l div {
+    padding-left: 0px;
+    margin-bottom: 14px;
+}
+.option-desktop .comp-l div:last-child {
+    margin: 0;
+}
+.option-desktop .login a {
+    margin-left: 40px;
+}
+.option-desktop .login button {
+    border: 2px solid var(--Medium-Gray);
+    border-radius: 15px;
+    color: var(--Medium-Gray);
+    background-color: transparent;
+    padding: 12px 20px;
+    transition: 0.3s;
+}
+.section .container .landing {
+    text-align: center;
+}
+.section .landing .mobile-hero {
+    width: 100%;
+}
+.section .landing .desktop-hero {
+    display: none;
+}
+.landing .text h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+.landing .text p {
+    color: var(--Medium-Gray);
+    line-height: 1.4;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+}
+.landing .button button {
+    background-color: black;
+    color: var(--Almost-White);
+    border: 2px var(--Almost-Black) solid;
+    border-radius: 16px;
+    padding: 16px 22px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+.landing .button button:hover {
+    color: var(--Almost-Black);
+    background-color: var(--Almost-White);
+    border: 2px var(--Almost-Black) solid;
+    cursor: pointer;
+}
+.section .container .footer {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+.footer img {
+    width: 60px;
+}
+/* media */
+@media (min-width: 768px) {
+    body {
+        height: calc(100vh - 35px);
+    }
+    .section {
+        height: calc(100vh - 35px);
+    }
+    .section .header {
+        margin: 35px 40px;
+    }
+    .header .slide {
+        width: 85%;
+    }
+    .section .header .logo {
+        width: 90px;
+    }
+    /* .header .option-desktop {
+        display: flex;
+    } */
+    .section .header .option-l {
+        display: none;
+    }
+    .section .container {
+        height: calc(100vh - 120px);
+        position: relative;
+        transform: translateY(-50%);
+        top: 45%;
+    }
+    .section .container .landing {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        position: relative;
+        transform: translateY(-50%);
+        top: 45%;    
+    }
+    .section .landing .mobile-hero {
+        display: none;
+    }
+    .section .landing .desktop-hero {
+        display: unset;
+        width: 450px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .section .landing .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 525px;
+        text-align: start;
+    }
+    .landing .text h1 {
+        font-size: 80px;
+        margin-top: 70px;
+    }
+    .landing .text p {
+        padding: 0;
+        width: 460px;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+    .section .container .footer {
+        padding: 0;
+        margin-top: 40px;
+        margin-bottom: 0;
+        margin-right: 35px;
+    }
+    .footer img {
+        width: 90px;
+    }
+    .footer img:nth-child(2) {
+        width: 65px;
+    }
+} 
+
+/* end section */
